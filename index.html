@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon"
+        href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgZmlsbD0iIzRmZDFkOSIgcj0iMzAiLz48cGF0aCBkPSJtMjAuNCAxNy4xaDYuMnYxNy44YzAgMiAuMiAzLjQuNyA0LjQuNyAxLjYgMi4zIDIuNCA0LjggMi40IDIuNCAwIDQtLjggNC44LTIuNC41LS45LjctMi40LjctNC40di0xNy44aDYuMnYxNy45YzAgMy4xLS41IDUuNS0xLjQgNy4yLTEuOCAzLjEtNS4yIDQuNy0xMC4yIDQuN3MtOC40LTEuNi0xMC4yLTQuN2MtMS0xLjctMS40LTQuMS0xLjQtNy4yeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=="
+        type="image/png"> <!-- Replace with your logo path -->
+
+    <style>
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        /* Text typing animation */
+        .typing {
+            border-right: 2px solid yellow;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 2s steps(10, end) forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-200 font-sans">
+
+    <!-- Header with Navigation Tabs -->
+    <header class="bg-gray-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-yellow-500">Shashikumar G N</h1>
+            <!-- Hamburger Icon for Mobile View -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-300 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#about" class="text-gray-300 hover:text-yellow-500 transition">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-yellow-500 transition">Skills</a>
+                <a href="#experience" class="text-gray-300 hover:text-yellow-500 transition">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-yellow-500 transition">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-yellow-500 transition">Contact</a>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-gray-800 text-gray-300 hidden">
+            <a href="#about" class="block px-4 py-2 hover:bg-gray-700 transition">About</a>
+            <a href="#skills" class="block px-4 py-2 hover:bg-gray-700 transition">Skills</a>
+            <a href="#experience" class="block px-4 py-2 hover:bg-gray-700 transition">Experience</a>
+            <a href="#projects" class="block px-4 py-2 hover:bg-gray-700 transition">Projects</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-gray-700 transition">Contact</a>
+        </div>
+    </header>
+
+
+
+
+    <div class="flex flex-col md:flex-row">
+        <!-- Sidebar with Contact Info -->
+        <!-- Sidebar with Contact Info -->
+        <aside class="w-full md:w-64 bg-gray-800 min-h-screen p-6">
+            <div class="text-center mb-8">
+                <img src="assets/imgs/Passport New.jpg"
+                    alt="Profile Picture" class="rounded-full mx-auto mb-4 w-32 h-32">
+                <h2 class="text-xl font-semibold">I'm a <span id="role" class="text-yellow-500"></span></h2>
+            </div>
+            <div class="flex justify-center space-x-4 text-yellow-500 mb-4">
+                <p class="flex items-center">
+                    <a href="mailto:shashikumargn280@gmail.com" class="flex items-center hover:text-white">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </p>
+                <p class="flex items-center">
+                    <a href="tel:+91 8310090917" class="flex items-center hover:text-white">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="https://github.com/Shashi2811"class="flex items-center hover:text-white">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/shashikumargn28/"
+                        class="flex items-center hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </p>
+                <p>
+                    <a href="" class="flex items-center hover:text-white">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </p>
+            </div>
+
+            <!-- <div class="text-gray-400 text-center">
+        <p>udaykumargjewoor@gmail.com</p>
+        <p>+91 7259931948</p>
+    </div> -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 md:p-8">
+            <!-- About Section -->
+            <section id="about" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">About Me</h2>
+                <p class="text-gray-300">
+                    I am a Business Analyst at Analogica Software with experience in data analytics, visualization, and automation using 
+                    Power BI, SQL, Python, and Excel. I have worked on building SQL-based ETL pipelines, designing interactive dashboards, and 
+                    automating business workflows. My earlier experience in sales and CRM systems gives me a strong foundation in understanding business processes and delivering impactful data-driven solutions.
+
+
+                </p>
+
+                <div class="mt-6 flex space-x-4">
+                    <a href="mailto:shashikumargn280@gmail.com"
+                        class="inline-block px-6 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded transition duration-300">
+                        Hire Me
+                    </a>
+                    <a href="https://drive.google.com/file/d/1MwsRN4gaqjGlvcGbDOKRUg5GhChC33mz/view?usp=sharing"
+                        target="_blank"
+                        class="inline-block px-6 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded transition duration-300">
+                        Resume
+                    </a>
+                </div>
+            </section>
+
+            <!-- Profile Summary Section -->
+            <section id="profile" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">Profile Summary</h2>
+                <ul class="list-disc ml-6 text-gray-300">
+                    <li>Business Analyst: Over 1 year of experience in data analysis, reporting, and automation, turning raw data into meaningful business insights.</li>
+                    <li>Technical Expertise: Proficient in Power BI, SQL, Python, Excel, and ETL workflows for data cleaning, modeling, and analysis.</li>
+                    <li>Automation Skills: Skilled in using Power Query and Excel macros to streamline reporting and reduce repetitive tasks.</li>
+                    <li>Visualization Proficiency: Experienced in designing interactive dashboards and KPI reports with Power BI to support decision-making.</li>
+                    <li>Data Handling: Strong focus on data wrangling, transformation, and exploratory analysis to ensure accuracy and reliability of reports.</li>
+                    <li>Core Strengths: Problem-solving, analytical thinking, stakeholder collaboration, and bridging business needs with technical solutions.</li>
+                    <li>Business Understanding: Background in sales and CRM operations at BYJU’S, enhancing communication and client engagement skills.</li>
+                </ul>
+            </section>
+
+           <!-- Skills Section -->
+<section id="skills" class="mb-10 fade-in">
+    <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">Technical Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <!-- Python -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="Python — automation scripts, data cleaning, and ad-hoc analysis">
+            <i class="fab fa-python text-4xl text-yellow-500 mb-2"></i>
+            <span class="text-gray-300">Python</span>
+            <p class="text-sm text-gray-400">Automation, data cleaning, scripting</p>
+        </div>
+
+        <!-- SQL / MySQL -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="SQL — querying, joins, aggregations, and transformations">
+            <i class="fas fa-database text-4xl text-yellow-500 mb-2"></i>
+            <span class="text-gray-300">SQL / MySQL</span>
+            <p class="text-sm text-gray-400">Joins, queries, transformations</p>
+        </div>
+
+        <!-- Microsoft SQL Server -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="MS SQL Server — database management and BI integration">
+            <i class="fas fa-server text-4xl text-red-400 mb-2"></i>
+            <span class="text-gray-300">MS SQL Server</span>
+            <p class="text-sm text-gray-400">Database mgmt & BI integration</p>
+        </div>
+
+        <!-- Power BI -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="Power BI — dashboards, DAX measures, KPI design, and drillthrough reports">
+            <i class="fas fa-chart-bar text-4xl text-yellow-500 mb-2"></i>
+            <span class="text-gray-300">Power BI</span>
+            <p class="text-sm text-gray-400">DAX, KPIs, Drillthrough, dashboards</p>
+        </div>
+
+        <!-- Excel -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="Excel — advanced analysis with Pivot, Power Pivot, and macros">
+            <i class="fas fa-file-excel text-4xl text-green-500 mb-2"></i>
+            <span class="text-gray-300">Excel</span>
+            <p class="text-sm text-gray-400">Pivot, Power Pivot, Macros</p>
+        </div>
+
+        <!-- Power Query / ETL -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="Power Query — building repeatable ETL pipelines for clean, structured data">
+            <i class="fas fa-random text-4xl text-yellow-400 mb-2"></i>
+            <span class="text-gray-300">Power Query / ETL</span>
+            <p class="text-sm text-gray-400">Data cleaning & transformations</p>
+        </div>
+
+        <!-- Tableau -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="Tableau — quick prototyping and storytelling with visuals">
+            <i class="fas fa-chart-pie text-4xl text-orange-400 mb-2"></i>
+            <span class="text-gray-300">Tableau</span>
+            <p class="text-sm text-gray-400">Storytelling & visual analytics</p>
+        </div>
+
+        <!-- Data Modeling & Star Schema -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="Data Modeling — star schema, relationships, and structured datasets for BI">
+            <i class="fas fa-project-diagram text-4xl text-blue-400 mb-2"></i>
+            <span class="text-gray-300">Data Modeling</span>
+            <p class="text-sm text-gray-400">Star schema & relationships</p>
+        </div>
+
+        <!-- Git -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="Git — version control and collaborative workflows">
+            <i class="fas fa-code-branch text-4xl text-yellow-500 mb-2"></i>
+            <span class="text-gray-300">Git</span>
+            <p class="text-sm text-gray-400">Version control</p>
+        </div>
+
+        <!-- GitHub -->
+        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105"
+             title="GitHub — hosting repositories and sharing projects">
+            <i class="fab fa-github text-4xl text-white mb-2"></i>
+            <span class="text-gray-300">GitHub</span>
+            <p class="text-sm text-gray-400">Code & project hosting</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+            <!-- Experience Section -->
+            <section id="experience" class="mb-10 fade-in">
+                
+
+                <!-- Professional Experience Section -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">Professional Experience</h2>
+
+<!-- Analogica Software - Full-time -->
+<div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+    <h3 class="text-xl font-semibold text-white">Business Analyst</h3>
+    <p class="text-gray-400">Analogica Software Dev Pvt Ltd, Bengaluru</p>
+    <p class="text-gray-400">Aug 2025 – Present</p>
+    <ul class="text-gray-400 list-disc ml-5 mt-2">
+        <li>Owned end-to-end BI lifecycle by extracting data from SQL, modeling into star-schema datasets, and automating refreshes to cut manual updates by 60%.</li>
+        <li>Optimized DAX measures and Power BI data models (measure branching, surrogate keys, column reduction), reducing dashboard refresh time from 10 minutes to under 4 minutes.</li>
+        <li>Standardized BI templates, themes, and documentation, doubling dashboard delivery speed and ensuring consistent KPIs across teams.</li>
+    </ul>
+</div>
+
+<!-- Analogica Software - Internship -->
+<div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+    <h3 class="text-xl font-semibold text-white">Business Analyst Intern</h3>
+    <p class="text-gray-400">Analogica Software Dev Pvt Ltd, Bengaluru</p>
+    <p class="text-gray-400">Mar 2025 – Jul 2025</p>
+    <ul class="text-gray-400 list-disc ml-5 mt-2">
+        <li>Extracted and structured contract, budget, and operational data into star-schema models, improving query performance and consistency by 25%.</li>
+        <li>Designed interactive Power BI dashboards with DAX measures, drillthrough analysis, and parameters to monitor project costs, schedules, and vendor KPIs.</li>
+        <li>Integrated and validated unstructured external datasets into BI models, creating ER diagrams and data dictionaries that improved reporting reliability by 40%.</li>
+    </ul>
+</div>
+
+<!-- Certisured -->
+<div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+    <h3 class="text-xl font-semibold text-white">Business Analyst Intern (Sales & Marketing)</h3>
+    <p class="text-gray-400">Certisured, Bengaluru</p>
+    <p class="text-gray-400">Aug 2024 – Feb 2025</p>
+    <ul class="text-gray-400 list-disc ml-5 mt-2">
+        <li>Consolidated multi-source data using Excel & Power Query, improving reporting accuracy for sales and marketing by 30%.</li>
+        <li>Analyzed enquiry-to-admission funnels with pivot tables, boosting targeted outreach efficiency by 20%.</li>
+        <li>Built weekly KPI dashboards in Excel/Power BI, reducing manual reporting workload by 5 hours per week.</li>
+    </ul>
+</div>
+
+<!-- BYJU'S -->
+<div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+    <h3 class="text-xl font-semibold text-white">Business Development Associate</h3>
+    <p class="text-gray-400">Think and Learn Pvt Ltd – BYJU’S, Bengaluru</p>
+    <p class="text-gray-400">2020 – 2021</p>
+    <ul class="text-gray-400 list-disc ml-5 mt-2">
+        <li>Achieved 120% of sales targets through CRM-based lead generation and structured product demonstrations.</li>
+        <li>Improved first-call closures by 18% using structured sales methodology and client engagement techniques.</li>
+        <li>Reduced payment errors by 25% by streamlining EMI and order management with BYJU’S Pay & Order Hive.</li>
+    </ul>
+</div>
+
+
+</section>
+
+            <!-- Projects Section -->
+<section id="projects" class="mb-10 fade-in">
+    <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">Projects</h2>
+
+    <!-- Supply Chain Backlog & Shipment Analysis -->
+    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+        <h3 class="text-xl font-semibold text-white">Supply Chain Backlog & Shipment Analysis</h3>
+        <p class="text-gray-400 list-disc ml-5 mt-2">
+            Built interactive dashboards to analyze shipment delays, revenue backlog, and customer-level performance across periods.
+        </p>
+        <ul class="text-gray-400 list-disc ml-5 mt-2">
+            <li>Tools Used: Power BI, Excel, Power Query</li>
+            <li>Cleaned and standardized shipment/backlog datasets, resolving fiscal vs. calendar date inconsistencies.</li>
+            <li>Developed ETL pipeline to unify datasets and modeled KPIs (lead time, shipment variance, on-time delivery).</li>
+            <li>Delivered dashboards answering revenue, backlog, and shipment-related business queries.</li>
+        </ul>
+        <p><b>Project Link:</b> <a href="https://github.com/yourusername/supply-chain-analysis" target="_blank" class="text-yellow-400 hover:underline">View Project</a></p>
+    </div>
+
+    <!-- YouTube Influencer ROI Analysis -->
+    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+        <h3 class="text-xl font-semibold text-white">YouTube Influencer ROI Analysis Dashboard</h3>
+        <p class="text-gray-400 list-disc ml-5 mt-2">
+            Designed a ROI analysis framework to evaluate influencer campaigns and measure profitability.
+        </p>
+        <ul class="text-gray-400 list-disc ml-5 mt-2">
+            <li>Tools Used: Excel, SQL, Power BI, Power Query Editor, DAX</li>
+            <li>Performed SQL data transformations and quality checks to prepare analysis-ready views.</li>
+            <li>Built Power BI dashboards with DAX measures for engagement, reach, and ROI modeling.</li>
+            <li>Identified top influencers, projecting campaign profits of $1M+ per campaign.</li>
+        </ul>
+        <p><b>Project Link:</b> <a href="https://github.com/yourusername/influencer-roi-analysis" target="_blank" class="text-yellow-400 hover:underline">View Project</a></p>
+    </div>
+
+    <!-- Automated Sales Analytics Dashboard -->
+    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+        <h3 class="text-xl font-semibold text-white">Automated Sales Analytics Dashboard</h3>
+        <p class="text-gray-400 list-disc ml-5 mt-2">
+            Automated Excel-based reporting to track sales, revenue, and customer behavior across categories and geographies.
+        </p>
+        <ul class="text-gray-400 list-disc ml-5 mt-2">
+            <li>Tools Used: Excel, Power Query, VBA Macros</li>
+            <li>Built interactive Excel dashboards with pivots, slicers, and KPIs to analyze sales performance.</li>
+            <li>Automated reporting workflows with VBA macros and forms, reducing manual effort significantly.</li>
+            <li>Applied statistical analysis (descriptive stats & t-tests) to uncover drivers of order returns.</li>
+        </ul>
+        <p><b>Project Link:</b> <a href="https://github.com/yourusername/sales-analytics-dashboard" target="_blank" class="text-yellow-400 hover:underline">View Project</a></p>
+    </div>
+</section>
+
+           <!-- Certifications -->
+                <section id="certifications" class="mb-10 fade-in">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">Certificates</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <!-- Certisured -->
+                        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                            <i class="fas fa-chart-line text-4xl text-yellow-400 mb-2"></i>
+                            <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy9mMGQ1ZWUwY2NlZGM1MmU2L0VWYXpGWVRvX1VsT3VNSFM5TmtSNE5FQk5VRkZLakxnUUhOWlBVQXllZWtaS0E%5FZT1mdU00VnI&cid=F0D5EE0CCEDC52E6&id=F0D5EE0CCEDC52E6%21s8415b356fde84e49b8c1d2f4d911e0d1&parId=F0D5EE0CCEDC52E6%21se5885246d5724526ae0c09f492d2eab1&o=OneUp" target="_blank" 
+                            class="text-gray-300 hover:text-yellow-400 text-center">
+                                Applied Business Analytics with Power BI, Excel, SQL & Tableau – Certisured (2024)
+                            </a>
+                        </div>
+
+                        <!-- Deloitte Forage -->
+                        <div class="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-lg transition hover:scale-105">
+                            <i class="fas fa-briefcase text-4xl text-blue-400 mb-2"></i>
+                            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_LHvdB7EWenLKnjtxm_1752610286633_completion_certificate.pdf" target="_blank" 
+                            class="text-gray-300 hover:text-yellow-400 text-center">
+                                Data Analytics Job Simulation – Deloitte (Forage, 2025)
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+            <!-- Blogs -->
+                <section id="blogs" class="mb-10 fade-in">
+                    <!-- Blogs Section -->
+                    <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">Blogs</h2>
+
+                    <!-- Blog 1 -->
+                    <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-lg mb-4 transition hover:scale-105">
+                        <h3 class="text-xl font-semibold text-white">
+                            Understanding ETL: A Beginner’s Perspective
+                        </h3>
+                        <p class="text-gray-400">
+                            In this blog, I explain the fundamentals of ETL (Extract, Transform, Load) in data analytics, 
+                            breaking down its role in ensuring clean, structured, and reliable data pipelines. 
+                            Aimed at beginners, it highlights why ETL is essential for building dashboards and business insights.
+                        </p>
+                        <a href="https://certisured.com/blogs/understanding-etl-a-beginner-s-perspective/" target="_blank"
+                        class="text-yellow-400 hover:underline">Read Blog</a>
+                    </div>
+                </section>
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="mb-10 fade-in">
+                <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-4">Contact Me</h2>
+                <form id="contact-form" class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Name"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required>
+                    <input type="email" name="email" placeholder="Your Email"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required>
+                    <textarea name="message" rows="5" placeholder="Your Message"
+                        class="w-full p-2 rounded bg-gray-700 text-white" required></textarea>
+                    <button type="submit"
+                        class="w-full bg-yellow-500 text-black p-2 rounded hover:bg-yellow-400 transition">Send
+                        Message</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 text-center">
+        <p class="text-gray-400">&copy; 2025 Sumer Pasha. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init("91E1CCWAiHScoS7Vt"); // Replace with your EmailJS user ID
+        })();
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_aptluqf', 'template_dx55q48', this)
+                .then(function () {
+                    alert("Message sent successfully!");
+                }, function (error) {
+                    alert("Failed to send the message. Please try again.");
+                    console.log('EmailJS error:', error);
+                });
+        });
+
+        // Text Animation for Role
+        const roles = ["Data Analyst"," Business Analyst", "Data Enthusiast"];
+        let currentRoleIndex = 0;
+        let currentCharIndex = 0;
+        const roleElement = document.getElementById("role");
+
+        function type() {
+            if (currentCharIndex < roles[currentRoleIndex].length) {
+                roleElement.textContent += roles[currentRoleIndex].charAt(currentCharIndex);
+                currentCharIndex++;
+                setTimeout(type, 100); // Speed of typing
+            } else {
+                setTimeout(deleteRole, 1000); // Pause before deleting
+            }
+        }
+
+        function deleteRole() {
+            if (currentCharIndex > 0) {
+                roleElement.textContent = roleElement.textContent.slice(0, -1);
+                currentCharIndex--;
+                setTimeout(deleteRole, 50); // Speed of deleting
+            } else {
+                currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+                setTimeout(type, 500); // Pause before typing next role
+            }
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+        // Start the typing animation
+        document.addEventListener("DOMContentLoaded", type);
+
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
